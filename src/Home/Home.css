@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+.gfont{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: black;
+}
+
+
+
+@media (min-width: 768px) {
+    .my-btn-bg{
+        padding: 1.3rem 4rem;
+        font-size: 1rem;
+    }
+    
+    .my-btn {
+        background: #7843e9;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        font-weight: 700;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,.15);
+        transition: transform .3s;
+    }
+
+    .my-btn:hover {
+        transform: translateY(-3px); /* Moves the button 3px up on hover */
+        box-shadow: 0 8px 20px 0 rgba(0,0,0,.25); /* Increases shadow size */
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .my-btn-phone-bg{
+        padding: .8rem 2rem;
+        font-size: .8rem;
+    }
+    
+    
+    .my-btn-phone{
+        background: #7843e9;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        font-weight: 700;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,.15);
+        transition: transform .3s;
+    }
+
+    .my-btn-phone:hover {
+        transform: translateY(-3px); /* Moves the button 3px up on hover */
+        box-shadow: 0 8px 20px 0 rgba(0,0,0,.25); /* Increases shadow size */
+    }
+}
+
+
+.download-icon{
+    font-weight: 200;
+}
+
