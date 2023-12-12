@@ -41,6 +41,27 @@ const Home = () => {
         saveAs(myCv, 'SouravDuttaCV.txt')
     }
 
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+      });
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+      
+        console.log(formData); 
+        
+      };
+
     return (
         <div>
 
@@ -176,12 +197,12 @@ const Home = () => {
 
                 </div>
 
-                <div className='mt-10 lg:grid grid-cols-2 items-center gap-28 lg:max-w-screen-xl mx-auto lg:px-10'>
-                    <div>
+                <div className='mt-10 lg:flex justify-center items-center gap-28 lg:max-w-screen-xl mx-auto '>
+                    <div className='flex-1'>
                         <h2 className='gfont pl-4 text-xl font-extrabold lg:text-2xl '>Get to know me!</h2>
-                        <p className='gfont p-2 mt-8 pl-4 text-sm lg:text-base font-medium font-serif'> I am A Frontend Web Developer, Building the Frontend of Websites. Check out some of my work in the Projects section.</p>
-                        <p className='gfont p-2 mt-4 pl-4 text-sm lg:text-base  font-medium font-serif'>I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my <a href="https://www.linkedin.com/in/souravn1200/" target='blank' className='text-[#7843e9] underline font-thin'>Linkedin</a> where I post useful content related to Web Development and Programming</p>
-                        <p className='gfont p-2 mt-4 pl-4 text-sm lg:text-base  font-medium font-serif'>
+                        <p className='gfont p-2 mt-8 pl-4 text-sm lg:text-base font-medium'> I am A Frontend Web Developer, Building the Frontend of Websites. Check out some of my work in the Projects section.</p>
+                        <p className='gfont p-2 mt-4 pl-4 text-sm lg:text-base  font-medium'>I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my <a href="https://www.linkedin.com/in/souravn1200/" target='blank' className='text-[#7843e9] underline font-thin'>Linkedin</a> where I post useful content related to Web Development and Programming</p>
+                        <p className='gfont p-2 mt-4 pl-4 text-sm lg:text-base  font-medium'>
                             I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
                         </p>
 
@@ -190,7 +211,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div>
+                    <div className='flex-1'>
                         <div>
                             <h2 className='gfont mt-10 lg:-mt-24 pl-4 text-xl font-extrabold  lg:text-2xl'>My Skills</h2>
                         </div>
@@ -536,7 +557,7 @@ const Home = () => {
 
                 </div>
 
-                <div className='max-w-4xl mx-auto text-justify bg-[#ffffff] p-8'>
+                <div className='max-w-4xl mx-auto text-justify bg-[#ffffff] mt-6 p-8'>
                     <p className='font-serif  lg:text-lg'>Hey there, I'm Sourav Dutta—a dedicated management student currently pursuing my master's degree after completing my honors. While I navigate the world of academia, my heart beats for football. As an avid Liverpool Football Club supporter, you'll often find me cheering passionately for my team.
                         <br /><br />
                         Beyond the field, my aspirations lie in tech. Over the next two years, I'm on a mission to become a proficient full-stack professional, aiming to excel in my field and make significant strides in my career. Passion, dedication, and the pursuit of knowledge drive me forward on this exciting journey.
@@ -544,20 +565,119 @@ const Home = () => {
                         Join me as I blend my academic pursuits, football fervor, and tech ambitions into a compelling story of growth and success.</p>
 
 
-                        <div className='flex items-center justify-center gap-4 mt-5'>
+                    <div className='flex items-center justify-center gap-4 mt-5'>
 
                         <AwesomeButton type='secondary'> <a href="https://www.facebook.com/souravn1200" target='blank'>Facebook</a> </AwesomeButton>
-                    
+
                         <AwesomeButton type="secondary"><a href="https://github.com/Souravn1200" target='blank'>Git Hub</a></AwesomeButton>
 
                         <AwesomeButton type="secondary"> <a href="https://www.linkedin.com/in/souravn1200/" target='blank'>Linked In</a></AwesomeButton>
-                            
-                        
-                        </div>
+
+
+                    </div>
                 </div>
             </div>
 
             {/* personal info ends */}
+
+            {/* contact me start */}
+
+            <div className='bg-[#f8f8f8] pb-20 '>
+                <div className='mx-auto w-[100%] text-center lg:pb-10'>
+
+                    <h2 className='gfont font-bold text-xl lg:text-4xl'>CONTACT ME</h2>
+                    <span className=''></span>
+                    <hr className="border-t-4 border-[#7843e9] w-[4%] lg:w-[2%] mx-auto rounded-md mt-2 mb-4"></hr>
+
+                    <p className='gfont text-sm lg:text-xl lg:w-[70%] mx-auto px-4'>In case you want to know something more</p>
+
+                </div>
+
+                <div>
+                <div className="gfont max-w-md mx-auto mt-8 p-6 bg-gray-100 rounded-md">
+      <h2 className="text-2xl font-bold mb-4 text-center"></h2>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label htmlFor="name" className="block mb-2 font-medium">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            className="w-full border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block mb-2 font-medium">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Your Email"
+            className="w-full border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="message" className="block mb-2 font-medium">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your Message"
+            rows="4"
+            className="w-full border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-[#7843e9] text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+                </div>
+            </div>
+
+            {/* contact e end */}
+
+            {/* footer starts */}
+
+
+      <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+  <nav className="grid grid-flow-col gap-4">
+    <a className="link link-hover">About me</a>
+    <a className="link link-hover">Contact</a>
+
+  </nav> 
+  <nav>
+    <div className="grid grid-flow-col gap-4">
+    <a href=""> <FaFacebook className='h-10 w-10'></FaFacebook> </a>
+    <a href=""> <FaGithub className='h-10 w-10'></FaGithub> </a>
+    <a href=""> <FaLinkedin className='h-10 w-10'></FaLinkedin> </a>
+    </div>
+  </nav> 
+  <aside>
+    <p>Copyright © 2023 - All right reserved by Sourav Dutta</p>
+  </aside>
+</footer>
+
+
+            {/* footer ends */}
+
+
             <div>
 
             </div>
